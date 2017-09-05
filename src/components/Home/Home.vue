@@ -1,12 +1,14 @@
 <template>
   <div class="home">
     <h1>{{msg}}</h1>
-    <button type="button" name="button" @click="change">change</button>
+    <div class="image"></div>
     <router-link :to="{ name: 'other', params: {} }">go other page</router-link>
   </div>
 </template>
 
 <script>
+import './scss/home.scss';
+
 export default {
   name: 'Home',
   data() {
