@@ -7,8 +7,8 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), './public'),
     publicPath: '/',
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    filename: 'js/[name].bundle.js',
+    chunkFilename: 'js/[name].bundle.js',
   },
   module: {
     rules: [{
@@ -59,7 +59,7 @@ module.exports = {
 
 if (isProduction) {
   module.exports.plugins = (module.exports.plugins || []).concat([
-    new ExtractTextPlugin('style.bundle.css'),
+    new ExtractTextPlugin('css/style.bundle.css'),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'

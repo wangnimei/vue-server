@@ -9,12 +9,12 @@ export function createRouter() {
     routes: [{
         name: 'home',
         path: '/home',
-        component: () => import ( /* webpackChunkName: 'home' */ './components/Home.vue')
+        component: () => import( /* webpackChunkName: 'home' */ './components/Home.vue')
       },
       {
         name: 'other',
         path: '/other',
-        component: () => import ( /* webpackChunkName: 'other' */ './components/Other.vue')
+        component: () => import( /* webpackChunkName: 'other' */ './components/Other.vue')
       }
     ]
   })
