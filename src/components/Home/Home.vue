@@ -22,7 +22,7 @@ export default {
       this.msg = 'change the message';
     }
   },
-  created() {
+  mounted() {
     console.log('hello');
   }
 }

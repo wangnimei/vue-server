@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var { createBundleRenderer } = require('vue-server-renderer');
 // read html template
-var template = require('fs').readFileSync('./views/index.html', 'utf-8');
+var template = require('fs').readFileSync('./src/index.html', 'utf-8');
 // server bundle informations
 var serverBundle = require('./public/vue-ssr-server-bundle.json');
 // client manifest informations
@@ -32,6 +32,7 @@ var renderer = createBundleRenderer(serverBundle, {
   template,
   clientManifest
 });
+
 app.get('*', function (req, res) {
   const context = { url: req.url };
   renderer.renderToString(context, (err, html) => {
