@@ -8,13 +8,13 @@ export function createRouter() {
     mode: 'history',
     routes: [{
         name: 'home',
-        path: '/home',
-        component: () => import( /* webpackChunkName: 'home' */ './components/Home/Home.vue')
+        path: '/home/:id',
+        component: () => import( /* webpackChunkName: 'home' */ './components/Home')
       },
       {
         name: 'other',
         path: '/other',
-        component: () => import( /* webpackChunkName: 'other' */ './components/Other/Other.vue')
+        component: () => import( /* webpackChunkName: 'other' */ './components/Other')
       }
     ]
   })

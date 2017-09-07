@@ -7,10 +7,11 @@
 </template>
 
 <script>
-import './scss/home.scss';
-
 export default {
   name: 'Home',
+  my_method() {
+    console.log('hello')
+  },
   data() {
     return {
       msg: 'This is home page'
@@ -23,7 +24,7 @@ export default {
     }
   },
   mounted() {
-    console.log('hello');
+    console.log(this)
   }
 }
 </script>

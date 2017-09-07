@@ -35,11 +35,13 @@ var renderer = createBundleRenderer(serverBundle, {
 
 app.get('*', function (req, res) {
   const context = { url: req.url };
+  console.log(context)
   renderer.renderToString(context, (err, html) => {
     if (err) {
-      return res.status(err.code).end('Not found page');
+      res.send('Not found page');
+    } else {
+      res.send(html);
     }
-    res.end(html);
   });
 });
 

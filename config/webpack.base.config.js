@@ -7,8 +7,8 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), './public'),
     publicPath: '/',
-    filename: 'js/[name].[hash:7].js',
-    chunkFilename: 'js/[name].[hash:7].js',
+    filename: isProduction ? 'js/[name].[hash:7].js' : 'js/[name].bundle.js',
+    chunkFilename: isProduction ? 'js/[name].[hash:7].js' : 'js/[name].bundle.js',
   },
   module: {
     rules: [{

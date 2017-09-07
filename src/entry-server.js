@@ -7,9 +7,10 @@ export default context => {
     router.onReady(() => {
       const matchedComponents = router.getMatchedComponents();
       if (!matchedComponents.length) {
-        return reject({ code: 404 });
+        reject({ code: 404 });
+      } else {
+        resolve(app);
       }
-      resolve(app);
     });
   });
 }

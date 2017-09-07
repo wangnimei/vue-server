@@ -1,17 +1,17 @@
 import Vue from 'vue';
 import App from './App.vue';
 import { createRouter } from './router';
-// import { createStore } from './store';
+import { createStore } from './store';
 // import { sync } from 'vuex-router-sync';
-// import './common/sass/style.scss';
+import './common/scss/style.scss';
 
 export function createApp() {
   const router = createRouter();
-  // const store = createStore();
+  const store = createStore();
   // sync(store, router);
   const app = new Vue({
     router,
-    // store,
+    store,
     render: h => h(App)
   });
 
