@@ -1,8 +1,8 @@
-var path = require('path');
-var merge = require('webpack-merge');
-var nodeExternals = require('webpack-node-externals');
-var baseConfig = require('./webpack.base.config');
-var VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
+var path = require('path')
+var merge = require('webpack-merge')
+var nodeExternals = require('webpack-node-externals')
+var baseConfig = require('./webpack.base.config')
+var VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 
 module.exports = merge(baseConfig, {
   // 将 entry 指向应用程序的 server entry 文件
@@ -33,4 +33,4 @@ module.exports = merge(baseConfig, {
   plugins: [
     new VueSSRServerPlugin()
   ]
-});
+})

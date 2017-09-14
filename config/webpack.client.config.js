@@ -1,7 +1,7 @@
-var webpack = require('webpack');
-var merge = require('webpack-merge');
-var baseConfig = require('./webpack.base.config.js');
-var VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
+var webpack = require('webpack')
+var merge = require('webpack-merge')
+var baseConfig = require('./webpack.base.config.js')
+var VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 
 module.exports = merge(baseConfig, {
   entry: './src/entry-client.js',
@@ -17,4 +17,4 @@ module.exports = merge(baseConfig, {
     // 生成 `vue-ssr-client-manifest.json`。
     new VueSSRClientPlugin()
   ]
-});
+})

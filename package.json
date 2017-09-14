@@ -11,6 +11,7 @@
     "build": "npm run server-pro && npm run client-pro"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -24,6 +25,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "morgan": "~1.8.1",
+    "mysql": "^2.14.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "serve-favicon": "~2.4.2",
