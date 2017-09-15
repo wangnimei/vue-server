@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>{{item.name}}</h1>
+    <h1>{{item.user_name}}</h1>
     <div class="image"></div>
     <router-link :to="{ name: 'other', params: {} }">go other page</router-link>
   </div>
