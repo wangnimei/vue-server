@@ -1,13 +1,9 @@
 var express = require('express')
 var router = express.Router()
-var connection = require('./mysql.connection.js')
+var os = require('os')
 
-router.get('/', function(req, res, next) {
-  connection.query('select user.id as user_id, user.name as user_name, class.name as class_name, class.class_number from user join class on user.class_id = class.id where user.id = 1', (err, rows, fields) => {
-    if (err) next(err)
-
-    res.send(rows[0])
-  })
+router.get('/api', function(req, res, next) {
+  res.send()
 })
 
 module.exports = router

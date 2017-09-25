@@ -5,7 +5,7 @@ export default context => {
     const { app, router, store } = createApp()
     router.push(context.url)
     router.onReady(() => {
-      const matchedComponents = router.getMatchedComponents();
+      const matchedComponents = router.getMatchedComponents()
       if (!matchedComponents.length) {
         reject({ code: 404 })
       } else {

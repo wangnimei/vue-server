@@ -1,6 +1,6 @@
 var express = require('express')
 var path = require('path')
-var favicon = require('serve-favicon')
+// var favicon = require('serve-favicon')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
@@ -33,10 +33,17 @@ var renderer = createBundleRenderer(serverBundle, {
   template,
   clientManifest
 })
-
+// no-cache middleware
+app.use(function(req, res, next) {
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+  res.setHeader('Pragma', 'no-cache') // HTTP 1.0.
+  res.setHeader('Expires', '0') // Proxies.
+  next()
+})
+// router middleware
 var api = require('./routes/api')
 app.use('/api', api)
-
+// vue render
 app.get('*', function (req, res, next) {
   const context = { url: req.url }
   renderer.renderToString(context, (err, html) => {
@@ -45,7 +52,6 @@ app.get('*', function (req, res, next) {
     res.send(html)
   })
 })
-
 // handle error
 app.use(function(err, req, res, next) {
   if (err.code === 404) {
